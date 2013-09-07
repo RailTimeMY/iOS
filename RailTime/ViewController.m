@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSMutableDictionary *lines;
 @property (strong, nonatomic) NSMutableArray *stations;
 
+@property (strong, nonatomic) IBOutlet UIView *mapContainer;
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 @property (strong, nonatomic) IBOutlet UIButton *nearestButton;
 @property (strong, nonatomic) IBOutlet UIButton *timeButton;
@@ -77,6 +78,11 @@
 		}
 	}];
 	
+	GMSMapView *mapView = [GMSMapView mapWithFrame:self.mapContainer.bounds camera:nil];
+	mapView.myLocationEnabled = YES;
+	self.mapView = mapView;
+	[self.mapContainer addSubview:self.mapView];
+	
 	[self.nearestButton.layer setCornerRadius:15];
 	[self.timeButton.layer setCornerRadius:15];
 	[self.destinationButton.layer setCornerRadius:15];
@@ -97,20 +103,9 @@
 
 #pragma mark - Methods
 
--(void)updateLocationChanges{
-    
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:self.myShareModel.myLocation.latitude
-                                                            longitude:self.myShareModel.myLocation.longitude
-                                                                 zoom:16];
-    self.mapView.camera=camera;
-    
-    
-    // Creates a marker in the center of the map.
-    [self.mapView clear];
-    self.marker = [[GMSMarker alloc] init];
-    self.marker .position = CLLocationCoordinate2DMake(self.myShareModel.myLocation.latitude, self.myShareModel.myLocation.longitude);
-    self.marker.map = self.mapView;
-    
+-(void)updateLocationChanges {
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:self.myShareModel.myLocation.latitude longitude:self.myShareModel.myLocation.longitude zoom:16];
+	[self.mapView animateToCameraPosition:camera];
 }
 
 - (IBAction)setStation:(UIButton *)button {
@@ -170,6 +165,7 @@
 	[self setDestinationButton:nil];
 	[self setGoButton:nil];
 	[self setTimeButton:nil];
+	[self setMapContainer:nil];
 	[super viewDidUnload];
 }
 @end

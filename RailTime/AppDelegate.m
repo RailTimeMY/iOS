@@ -83,15 +83,16 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
     self.myLocation = newLocation.coordinate;
-    
+
+	self.myShareModel = [RailTimeModel sharedModel];
 	self.myShareModel.myLocation = self.myLocation;
 	
-    NSLog(@"Delegate Location Latitude: %f Longitude: %f",newLocation.coordinate.latitude,newLocation.coordinate.longitude);
+//    NSLog(@"Delegate Location Latitude: %f Longitude: %f", newLocation.coordinate.latitude,newLocation.coordinate.longitude);
     [[NSNotificationCenter defaultCenter] postNotificationName:@"updateLocationChanges" object:nil];
 }
 
 - (void)turnOnLocationManager {
-    NSLog(@"Location Manager Turned on");
+//    NSLog(@"Location Manager Turned on");
     [self.locationManager startUpdatingLocation];
 }
 
