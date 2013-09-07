@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TimePickerViewController : UIViewController
+@class TimePickerViewController;
 
+@protocol TimePickerViewControllerDelegate
+- (void)timePickerController:(TimePickerViewController *)controller didPickTime:(NSDate *)date;
+@end
+
+@interface TimePickerViewController : UIViewController
+@property (weak, nonatomic) id <TimePickerViewControllerDelegate> delegate;
 @end

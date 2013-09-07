@@ -9,6 +9,7 @@
 #import "TimePickerViewController.h"
 
 @interface TimePickerViewController ()
+@property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 @end
 
@@ -35,12 +36,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
 - (IBAction)goBack {
 	[self dismissViewControllerAnimated:YES completion:^{
 		
 	}];
 }
 
+- (IBAction)setTime {
+	[self.delegate timePickerController:self didPickTime:self.datePicker.date];
+}
+
+- (void)viewDidUnload {
+	[self setDatePicker:nil];
+	[super viewDidUnload];
+}
 @end

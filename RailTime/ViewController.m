@@ -8,8 +8,6 @@
 
 #import "ViewController.h"
 #import "DirectionViewController.h"
-#import "StationPickerViewController.h"
-#import "TimePickerViewController.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) NSMutableDictionary *lines;
@@ -30,12 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-	[super viewDidAppear:animated];
 	self.stations = [[NSMutableArray alloc] init];
 	self.lines = [[NSMutableDictionary alloc] init];
 	
@@ -80,6 +72,7 @@
 
 - (IBAction)setStation:(UIButton *)button {
 	StationPickerViewController *stationPickerController = [[StationPickerViewController alloc] init];
+	stationPickerController.delegate = self;
 	stationPickerController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 	stationPickerController.lines = self.lines;
 	stationPickerController.stations = self.stations;
@@ -88,6 +81,7 @@
 
 - (IBAction)setTimeToReach {
 	TimePickerViewController *timePickerController = [[TimePickerViewController alloc] init];
+	timePickerController.delegate = self;
 	timePickerController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 	[self presentModalViewController:timePickerController animated:YES];
 }
@@ -96,6 +90,22 @@
 	DirectionViewController *directionController = [[DirectionViewController alloc] init];
 	directionController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 	[self presentModalViewController:directionController animated:YES];
+}
+
+#pragma mark - Delegates
+
+- (void)stationPickerController:(StationPickerViewController *)controller didPickIndexPath:(NSIndexPath *)indexPath
+{
+	[self dismissViewControllerAnimated:YES completion:^{
+		
+	}];
+}
+
+- (void)timePickerController:(TimePickerViewController *)controller didPickTime:(NSDate *)date
+{
+	[self dismissViewControllerAnimated:YES completion:^{
+		
+	}];
 }
 
 @end

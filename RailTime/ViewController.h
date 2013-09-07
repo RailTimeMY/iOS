@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StationPickerViewController.h"
+#import "TimePickerViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <StationPickerViewControllerDelegate, TimePickerViewControllerDelegate>
 
 @end
