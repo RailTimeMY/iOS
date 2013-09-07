@@ -25,6 +25,16 @@
 		775B4B7817DB14C100CAFBB9 /* StationPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 775B4B7617DB14C100CAFBB9 /* StationPickerViewController.xib */; };
 		775B4B7C17DB1CD000CAFBB9 /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 775B4B7A17DB1CD000CAFBB9 /* TimePickerViewController.m */; };
 		775B4B7D17DB1CD000CAFBB9 /* TimePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 775B4B7B17DB1CD000CAFBB9 /* TimePickerViewController.xib */; };
+		775B4B7F17DB24DF00CAFBB9 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4B7E17DB24DF00CAFBB9 /* Parse.framework */; };
+		775B4B8117DB24FF00CAFBB9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4B8017DB24FF00CAFBB9 /* AudioToolbox.framework */; };
+		775B4B8317DB250600CAFBB9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4B8217DB250600CAFBB9 /* CFNetwork.framework */; };
+		775B4B8517DB251200CAFBB9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4B8417DB251200CAFBB9 /* CoreLocation.framework */; };
+		775B4B8717DB251A00CAFBB9 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4B8617DB251A00CAFBB9 /* libz.1.1.3.dylib */; };
+		775B4B8917DB252300CAFBB9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4B8817DB252300CAFBB9 /* MobileCoreServices.framework */; };
+		775B4B8B17DB252E00CAFBB9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4B8A17DB252E00CAFBB9 /* QuartzCore.framework */; };
+		775B4B8D17DB253600CAFBB9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4B8C17DB253600CAFBB9 /* Security.framework */; };
+		775B4B8F17DB253900CAFBB9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4B8E17DB253900CAFBB9 /* StoreKit.framework */; };
+		775B4B9117DB254000CAFBB9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4B9017DB254000CAFBB9 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +64,16 @@
 		775B4B7917DB1CD000CAFBB9 /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerViewController.h; sourceTree = "<group>"; };
 		775B4B7A17DB1CD000CAFBB9 /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
 		775B4B7B17DB1CD000CAFBB9 /* TimePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimePickerViewController.xib; sourceTree = "<group>"; };
+		775B4B7E17DB24DF00CAFBB9 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = RailTime/Parse.framework; sourceTree = "<group>"; };
+		775B4B8017DB24FF00CAFBB9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		775B4B8217DB250600CAFBB9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		775B4B8417DB251200CAFBB9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		775B4B8617DB251A00CAFBB9 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		775B4B8817DB252300CAFBB9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		775B4B8A17DB252E00CAFBB9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		775B4B8C17DB253600CAFBB9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		775B4B8E17DB253900CAFBB9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		775B4B9017DB254000CAFBB9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +81,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				775B4B9117DB254000CAFBB9 /* SystemConfiguration.framework in Frameworks */,
+				775B4B8F17DB253900CAFBB9 /* StoreKit.framework in Frameworks */,
+				775B4B8D17DB253600CAFBB9 /* Security.framework in Frameworks */,
+				775B4B8B17DB252E00CAFBB9 /* QuartzCore.framework in Frameworks */,
+				775B4B8917DB252300CAFBB9 /* MobileCoreServices.framework in Frameworks */,
+				775B4B8717DB251A00CAFBB9 /* libz.1.1.3.dylib in Frameworks */,
+				775B4B8517DB251200CAFBB9 /* CoreLocation.framework in Frameworks */,
+				775B4B8317DB250600CAFBB9 /* CFNetwork.framework in Frameworks */,
+				775B4B8117DB24FF00CAFBB9 /* AudioToolbox.framework in Frameworks */,
+				775B4B7F17DB24DF00CAFBB9 /* Parse.framework in Frameworks */,
 				775B4B4A17DB03FA00CAFBB9 /* UIKit.framework in Frameworks */,
 				775B4B4C17DB03FA00CAFBB9 /* Foundation.framework in Frameworks */,
 				775B4B4E17DB03FA00CAFBB9 /* CoreGraphics.framework in Frameworks */,
@@ -90,6 +120,16 @@
 		775B4B4817DB03FA00CAFBB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				775B4B7E17DB24DF00CAFBB9 /* Parse.framework */,
+				775B4B9017DB254000CAFBB9 /* SystemConfiguration.framework */,
+				775B4B8E17DB253900CAFBB9 /* StoreKit.framework */,
+				775B4B8C17DB253600CAFBB9 /* Security.framework */,
+				775B4B8A17DB252E00CAFBB9 /* QuartzCore.framework */,
+				775B4B8817DB252300CAFBB9 /* MobileCoreServices.framework */,
+				775B4B8617DB251A00CAFBB9 /* libz.1.1.3.dylib */,
+				775B4B8417DB251200CAFBB9 /* CoreLocation.framework */,
+				775B4B8217DB250600CAFBB9 /* CFNetwork.framework */,
+				775B4B8017DB24FF00CAFBB9 /* AudioToolbox.framework */,
 				775B4B4917DB03FA00CAFBB9 /* UIKit.framework */,
 				775B4B4B17DB03FA00CAFBB9 /* Foundation.framework */,
 				775B4B4D17DB03FA00CAFBB9 /* CoreGraphics.framework */,
@@ -304,6 +344,10 @@
 		775B4B6D17DB03FA00CAFBB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/RailTime\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RailTime/RailTime-Prefix.pch";
 				INFOPLIST_FILE = "RailTime/RailTime-Info.plist";
@@ -316,6 +360,10 @@
 		775B4B6E17DB03FA00CAFBB9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/RailTime\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RailTime/RailTime-Prefix.pch";
 				INFOPLIST_FILE = "RailTime/RailTime-Info.plist";

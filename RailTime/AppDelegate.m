@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
 
 #import "ViewController.h"
 
@@ -21,6 +22,11 @@
 	} else {
 	    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
 	}
+	
+	[Parse setApplicationId:@"QqkWUSWrx1t4vedrwO9yqChD0SO27cm2dFw7MilW"
+				  clientKey:@"kGs6sQwxjDR3kW23as0hKwpgSoUxNiMN3zWJB659"];
+	[PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+	
 	self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
