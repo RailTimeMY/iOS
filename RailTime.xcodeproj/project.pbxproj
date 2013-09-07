@@ -103,6 +103,7 @@
 		775B4BAC17DB556E00CAFBB9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		775B4BAE17DB570B00CAFBB9 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = RailTime/FacebookSDK.framework; sourceTree = "<group>"; };
 		77A9605117DB65A6008B34CB /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = RailTime/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		77A9605317DB7A24008B34CB /* Enum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enum.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +211,7 @@
 				775B4B9717DB533C00CAFBB9 /* RailTimeModel.h */,
 				775B4B9817DB533C00CAFBB9 /* RailTimeModel.m */,
 				775B4B9517DB532100CAFBB9 /* Meadowpark.gpx */,
+				77A9605317DB7A24008B34CB /* Enum.h */,
 				775B4B5017DB03FA00CAFBB9 /* Supporting Files */,
 			);
 			path = RailTime;
