@@ -74,6 +74,7 @@
 	nearestLabel.font = [UIFont systemFontOfSize:22];
 	nearestLabel.minimumFontSize = 16;
 	nearestLabel.adjustsFontSizeToFitWidth = YES;
+	nearestLabel.textColor = [UIColor darkGrayColor];
 	nearestLabel.backgroundColor = [UIColor clearColor];
 	nearestLabel.textAlignment = UITextAlignmentCenter;
 	self.nearestStationLabel = nearestLabel;
@@ -93,6 +94,7 @@
 	UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, self.timeButton.bounds.size.width, 29)];
 	timeLabel.text = [formatter stringFromDate:self.arrivalTime];
 	timeLabel.font = [UIFont systemFontOfSize:22];
+	timeLabel.textColor = [UIColor darkGrayColor];
 	timeLabel.backgroundColor = [UIColor clearColor];
 	timeLabel.textAlignment = UITextAlignmentCenter;
 	self.timeLabel = timeLabel;
@@ -109,6 +111,7 @@
 	destinationLabel.font = [UIFont systemFontOfSize:22];
 	destinationLabel.minimumFontSize = 16;
 	destinationLabel.adjustsFontSizeToFitWidth = YES;
+	destinationLabel.textColor = [UIColor darkGrayColor];
 	destinationLabel.backgroundColor = [UIColor clearColor];
 	destinationLabel.textAlignment = UITextAlignmentCenter;
 	self.destinationLabel = destinationLabel;
@@ -222,6 +225,7 @@
 	StationPickerViewController *stationPickerController = [[StationPickerViewController alloc] init];
 	stationPickerController.delegate = self;
 	stationPickerController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+	stationPickerController.title = (button == self.nearestButton) ? @"NEAREST STATION":@"DESTINATION STATION";
 	stationPickerController.lines = self.lines;
 	stationPickerController.stations = self.stations;
 	[self presentModalViewController:stationPickerController animated:YES];
@@ -230,11 +234,14 @@
 - (IBAction)setTimeToReach {
 	TimePickerViewController *timePickerController = [[TimePickerViewController alloc] init];
 	timePickerController.delegate = self;
+	timePickerController.arrivalTime = self.arrivalTime;
 	timePickerController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 	[self presentModalViewController:timePickerController animated:YES];
 }
 
 - (IBAction)loadTime {
+	//get results from Parse
+	
 	DirectionViewController *directionController = [[DirectionViewController alloc] init];
 	directionController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 	directionController.stationNearest = self.stationNearest;

@@ -10,6 +10,7 @@
 
 @interface StationPickerViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @end
 
 @implementation StationPickerViewController
@@ -26,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	self.titleLabel.text = self.title;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -41,6 +43,7 @@
 
 - (void)viewDidUnload {
 	[self setTableView:nil];
+	[self setTitleLabel:nil];
 	[super viewDidUnload];
 }
 

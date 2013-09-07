@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DirectionViewController : UIViewController
+@property (assign, nonatomic) BOOL isOnTime;
 @property (strong, nonatomic) PFObject *stationNearest;
 @property (strong, nonatomic) NSDate *arrivalTime;
 @property (strong, nonatomic) PFObject *stationDestination;

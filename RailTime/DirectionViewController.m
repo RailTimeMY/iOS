@@ -9,8 +9,9 @@
 #import "DirectionViewController.h"
 
 @interface DirectionViewController ()
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) IBOutlet UITableViewCell *DirectionCell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *directionCell;
 
 @end
 
@@ -28,7 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+	self.titleLabel.text = (self.isOnTime) ? @"YOU WILL BE ON TIME!":@"YOU'RE ALREADY LATE...";
+	if (!self.isOnTime)
+		self.titleLabel.textColor = [UIColor redColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,6 +51,7 @@
 - (void)viewDidUnload {
 	[self setTableView:nil];
 	[self setDirectionCell:nil];
+	[self setTitleLabel:nil];
 	[super viewDidUnload];
 }
 @end

@@ -17,6 +17,7 @@
 @interface StationPickerViewController : UIViewController
 @property (weak, nonatomic) id <StationPickerViewControllerDelegate> delegate;
 
+@property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSMutableDictionary *lines;
 @property (strong, nonatomic) NSMutableArray *stations;
 @end

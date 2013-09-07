@@ -16,4 +16,5 @@
 
 @interface TimePickerViewController : UIViewController
 @property (weak, nonatomic) id <TimePickerViewControllerDelegate> delegate;
+@property (strong, nonatomic) NSDate *arrivalTime;
 @end
