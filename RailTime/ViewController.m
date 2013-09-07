@@ -7,11 +7,25 @@
 //
 
 #import "ViewController.h"
+#import <QuartzCore/QuartzCore.h>
+#import <GoogleMaps/GoogleMaps.h>
+
 #import "DirectionViewController.h"
+
+#import "RailTimeModel.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) NSMutableDictionary *lines;
 @property (strong, nonatomic) NSMutableArray *stations;
+
+@property (weak, nonatomic) IBOutlet GMSMapView *mapView;
+@property (strong, nonatomic) IBOutlet UIButton *nearestButton;
+@property (strong, nonatomic) IBOutlet UIButton *timeButton;
+@property (strong, nonatomic) IBOutlet UIButton *destinationButton;
+@property (strong, nonatomic) IBOutlet UIButton *goButton;
+
+@property (nonatomic) RailTimeModel *myShareModel;
+@property (nonatomic) GMSMarker *marker;
 @end
 
 @implementation ViewController
@@ -56,10 +70,23 @@
 					[self.lines setValue:line forKey:lineName];
 				}
 			}
+			
+			self.nearestButton.enabled = self.destinationButton.enabled = YES;
 		} else {
 			NSLog(@"Error: %@ %@", error, [error userInfo]);
 		}
 	}];
+	
+	[self.nearestButton.layer setCornerRadius:15];
+	[self.timeButton.layer setCornerRadius:15];
+	[self.destinationButton.layer setCornerRadius:15];
+	[self.goButton.layer setCornerRadius:15];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	self.myShareModel = [RailTimeModel sharedModel];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLocationChanges) name:@"updateLocationChanges" object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,6 +96,22 @@
 }
 
 #pragma mark - Methods
+
+-(void)updateLocationChanges{
+    
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:self.myShareModel.myLocation.latitude
+                                                            longitude:self.myShareModel.myLocation.longitude
+                                                                 zoom:16];
+    self.mapView.camera=camera;
+    
+    
+    // Creates a marker in the center of the map.
+    [self.mapView clear];
+    self.marker = [[GMSMarker alloc] init];
+    self.marker .position = CLLocationCoordinate2DMake(self.myShareModel.myLocation.latitude, self.myShareModel.myLocation.longitude);
+    self.marker.map = self.mapView;
+    
+}
 
 - (IBAction)setStation:(UIButton *)button {
 	StationPickerViewController *stationPickerController = [[StationPickerViewController alloc] init];
@@ -87,6 +130,19 @@
 }
 
 - (IBAction)loadTime {
+	NSMutableDictionary * dict  = [[NSMutableDictionary alloc]init];
+    [dict setObject:[NSNumber numberWithFloat:3.13229] forKey:@"selectedStationLatitude"];
+    [dict setObject:[NSNumber numberWithFloat:101.68774] forKey:@"selectedStationLongitude"];
+    [dict setObject:[NSNumber numberWithFloat:2.75474] forKey:@"destinationStationLatitude"];
+    [dict setObject:[NSNumber numberWithFloat:101.70582] forKey:@"destinationStationLongitude"];
+    [dict setObject:@"5PM" forKey:@"timeToReachAtDestination"];
+	[PFCloud callFunctionInBackground:@"hello" withParameters:dict block:^(NSString *result, NSError *error) {
+		if (!error) {
+			// result is @"Hello world!"
+			
+		}
+	}];
+	
 	DirectionViewController *directionController = [[DirectionViewController alloc] init];
 	directionController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 	[self presentModalViewController:directionController animated:YES];
@@ -108,4 +164,12 @@
 	}];
 }
 
+- (void)viewDidUnload {
+	[self setMapView:nil];
+	[self setNearestButton:nil];
+	[self setDestinationButton:nil];
+	[self setGoButton:nil];
+	[self setTimeButton:nil];
+	[super viewDidUnload];
+}
 @end

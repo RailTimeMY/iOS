@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gpx version="1.1"
+     creator="GMapToGPX 6.4j - http://www.elsewhere.org/GMapToGPX/"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+   <wpt lat="3.08415" lon="101.67971">
+      <name>407-425 Jalan Riang 14, Taman Gembira, 58200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia</name>
+      <cmt>407-425 Jalan Riang 14, Taman Gembira, 58200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia</cmt>
+      <desc>407-425 Jalan Riang 14, Taman Gembira, 58200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia</desc>
+   </wpt>
+   <wpt lat="3.08413" lon="101.6792">
+      <name>3.084132, 101.679207 (+3° 5' 2.88", +101° 40' 45.15")</name>
+      <cmt>+3° 5' 2.88", +101° 40' 45.15" (3.084132, 101.679207)</cmt>
+      <desc>+3° 5' 2.88", +101° 40' 45.15" (3.084132, 101.679207)</desc>
+   </wpt>
+</gpx>

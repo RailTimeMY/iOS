@@ -35,6 +35,20 @@
 		775B4B8D17DB253600CAFBB9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4B8C17DB253600CAFBB9 /* Security.framework */; };
 		775B4B8F17DB253900CAFBB9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4B8E17DB253900CAFBB9 /* StoreKit.framework */; };
 		775B4B9117DB254000CAFBB9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4B9017DB254000CAFBB9 /* SystemConfiguration.framework */; };
+		775B4B9617DB532100CAFBB9 /* Meadowpark.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 775B4B9517DB532100CAFBB9 /* Meadowpark.gpx */; };
+		775B4B9917DB533C00CAFBB9 /* RailTimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 775B4B9817DB533C00CAFBB9 /* RailTimeModel.m */; };
+		775B4B9B17DB536600CAFBB9 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4B9A17DB536600CAFBB9 /* GoogleMaps.framework */; };
+		775B4B9D17DB552900CAFBB9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4B9C17DB552900CAFBB9 /* AVFoundation.framework */; };
+		775B4B9F17DB553600CAFBB9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4B9E17DB553600CAFBB9 /* CoreData.framework */; };
+		775B4BA117DB554400CAFBB9 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4BA017DB554300CAFBB9 /* CoreText.framework */; };
+		775B4BA317DB554A00CAFBB9 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4BA217DB554A00CAFBB9 /* GLKit.framework */; };
+		775B4BA517DB555100CAFBB9 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4BA417DB555100CAFBB9 /* ImageIO.framework */; };
+		775B4BA717DB555B00CAFBB9 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4BA617DB555B00CAFBB9 /* libc++.dylib */; };
+		775B4BA917DB556100CAFBB9 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4BA817DB556100CAFBB9 /* libicucore.dylib */; };
+		775B4BAB17DB556800CAFBB9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4BAA17DB556800CAFBB9 /* libz.dylib */; };
+		775B4BAD17DB556E00CAFBB9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4BAC17DB556E00CAFBB9 /* OpenGLES.framework */; };
+		775B4BAF17DB570B00CAFBB9 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4BAE17DB570B00CAFBB9 /* FacebookSDK.framework */; };
+		77A9605217DB65A6008B34CB /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 77A9605117DB65A6008B34CB /* GoogleMaps.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +88,21 @@
 		775B4B8C17DB253600CAFBB9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		775B4B8E17DB253900CAFBB9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		775B4B9017DB254000CAFBB9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		775B4B9517DB532100CAFBB9 /* Meadowpark.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Meadowpark.gpx; sourceTree = "<group>"; };
+		775B4B9717DB533C00CAFBB9 /* RailTimeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RailTimeModel.h; sourceTree = "<group>"; };
+		775B4B9817DB533C00CAFBB9 /* RailTimeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RailTimeModel.m; sourceTree = "<group>"; };
+		775B4B9A17DB536600CAFBB9 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = RailTime/GoogleMaps.framework; sourceTree = "<group>"; };
+		775B4B9C17DB552900CAFBB9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		775B4B9E17DB553600CAFBB9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		775B4BA017DB554300CAFBB9 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		775B4BA217DB554A00CAFBB9 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		775B4BA417DB555100CAFBB9 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		775B4BA617DB555B00CAFBB9 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		775B4BA817DB556100CAFBB9 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		775B4BAA17DB556800CAFBB9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		775B4BAC17DB556E00CAFBB9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		775B4BAE17DB570B00CAFBB9 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = RailTime/FacebookSDK.framework; sourceTree = "<group>"; };
+		77A9605117DB65A6008B34CB /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = RailTime/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,19 +110,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				775B4BAD17DB556E00CAFBB9 /* OpenGLES.framework in Frameworks */,
+				775B4BAB17DB556800CAFBB9 /* libz.dylib in Frameworks */,
+				775B4BA917DB556100CAFBB9 /* libicucore.dylib in Frameworks */,
+				775B4BA717DB555B00CAFBB9 /* libc++.dylib in Frameworks */,
+				775B4BA517DB555100CAFBB9 /* ImageIO.framework in Frameworks */,
+				775B4BA317DB554A00CAFBB9 /* GLKit.framework in Frameworks */,
+				775B4BA117DB554400CAFBB9 /* CoreText.framework in Frameworks */,
+				775B4B8517DB251200CAFBB9 /* CoreLocation.framework in Frameworks */,
+				775B4B9F17DB553600CAFBB9 /* CoreData.framework in Frameworks */,
+				775B4B9D17DB552900CAFBB9 /* AVFoundation.framework in Frameworks */,
 				775B4B9117DB254000CAFBB9 /* SystemConfiguration.framework in Frameworks */,
 				775B4B8F17DB253900CAFBB9 /* StoreKit.framework in Frameworks */,
 				775B4B8D17DB253600CAFBB9 /* Security.framework in Frameworks */,
 				775B4B8B17DB252E00CAFBB9 /* QuartzCore.framework in Frameworks */,
 				775B4B8917DB252300CAFBB9 /* MobileCoreServices.framework in Frameworks */,
 				775B4B8717DB251A00CAFBB9 /* libz.1.1.3.dylib in Frameworks */,
-				775B4B8517DB251200CAFBB9 /* CoreLocation.framework in Frameworks */,
 				775B4B8317DB250600CAFBB9 /* CFNetwork.framework in Frameworks */,
 				775B4B8117DB24FF00CAFBB9 /* AudioToolbox.framework in Frameworks */,
 				775B4B7F17DB24DF00CAFBB9 /* Parse.framework in Frameworks */,
 				775B4B4A17DB03FA00CAFBB9 /* UIKit.framework in Frameworks */,
 				775B4B4C17DB03FA00CAFBB9 /* Foundation.framework in Frameworks */,
 				775B4B4E17DB03FA00CAFBB9 /* CoreGraphics.framework in Frameworks */,
+				775B4B9B17DB536600CAFBB9 /* GoogleMaps.framework in Frameworks */,
+				775B4BAF17DB570B00CAFBB9 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +160,18 @@
 		775B4B4817DB03FA00CAFBB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				775B4BAE17DB570B00CAFBB9 /* FacebookSDK.framework */,
+				775B4BAC17DB556E00CAFBB9 /* OpenGLES.framework */,
+				775B4BAA17DB556800CAFBB9 /* libz.dylib */,
+				775B4BA817DB556100CAFBB9 /* libicucore.dylib */,
+				775B4BA617DB555B00CAFBB9 /* libc++.dylib */,
+				775B4BA417DB555100CAFBB9 /* ImageIO.framework */,
+				775B4BA217DB554A00CAFBB9 /* GLKit.framework */,
+				775B4BA017DB554300CAFBB9 /* CoreText.framework */,
+				775B4B9E17DB553600CAFBB9 /* CoreData.framework */,
+				775B4B9C17DB552900CAFBB9 /* AVFoundation.framework */,
+				775B4B9A17DB536600CAFBB9 /* GoogleMaps.framework */,
+				77A9605117DB65A6008B34CB /* GoogleMaps.bundle */,
 				775B4B7E17DB24DF00CAFBB9 /* Parse.framework */,
 				775B4B9017DB254000CAFBB9 /* SystemConfiguration.framework */,
 				775B4B8E17DB253900CAFBB9 /* StoreKit.framework */,
@@ -155,6 +207,9 @@
 				775B4B6F17DB0C5900CAFBB9 /* DirectionViewController.h */,
 				775B4B7017DB0C5900CAFBB9 /* DirectionViewController.m */,
 				775B4B7117DB0C5900CAFBB9 /* DirectionViewController.xib */,
+				775B4B9717DB533C00CAFBB9 /* RailTimeModel.h */,
+				775B4B9817DB533C00CAFBB9 /* RailTimeModel.m */,
+				775B4B9517DB532100CAFBB9 /* Meadowpark.gpx */,
 				775B4B5017DB03FA00CAFBB9 /* Supporting Files */,
 			);
 			path = RailTime;
@@ -234,6 +289,8 @@
 				775B4B7317DB0C5900CAFBB9 /* DirectionViewController.xib in Resources */,
 				775B4B7817DB14C100CAFBB9 /* StationPickerViewController.xib in Resources */,
 				775B4B7D17DB1CD000CAFBB9 /* TimePickerViewController.xib in Resources */,
+				775B4B9617DB532100CAFBB9 /* Meadowpark.gpx in Resources */,
+				77A9605217DB65A6008B34CB /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +307,7 @@
 				775B4B7217DB0C5900CAFBB9 /* DirectionViewController.m in Sources */,
 				775B4B7717DB14C100CAFBB9 /* StationPickerViewController.m in Sources */,
 				775B4B7C17DB1CD000CAFBB9 /* TimePickerViewController.m in Sources */,
+				775B4B9917DB533C00CAFBB9 /* RailTimeModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +345,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = armv7;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -310,6 +369,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -319,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = armv7;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -335,6 +396,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

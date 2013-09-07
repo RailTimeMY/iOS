@@ -7,13 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @class ViewController;
+@class RailTimeModel;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property (strong, nonatomic) ViewController *viewController;
 
+@property (nonatomic) CLLocationManager *locationManager;
+@property (nonatomic) CLLocationCoordinate2D myLocation;
+@property (nonatomic) RailTimeModel *myShareModel;
 @end

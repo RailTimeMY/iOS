@@ -36,6 +36,17 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>fb439214349529305</string>
+		</dict>
+	</array>
+	<key>FacebookDisplayName</key>
+	<string>RailTimeMY</string>
+	<key>FacebookAppID</key>
+	<string>439214349529305</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
