@@ -12,7 +12,8 @@
 #import "TimePickerViewController.h"
 
 @interface ViewController ()
-
+@property (strong, nonatomic) NSMutableDictionary *lines;
+@property (strong, nonatomic) NSMutableArray *stations;
 @end
 
 @implementation ViewController
@@ -32,6 +33,43 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	self.stations = [[NSMutableArray alloc] init];
+	self.lines = [[NSMutableDictionary alloc] init];
+	
+	PFQuery *queryStation = [PFQuery queryWithClassName:@"Station"];
+	[queryStation orderByAscending:@"order"];
+	[queryStation findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+		if (!error) {
+			[self.stations addObjectsFromArray:objects];
+			
+			for (PFObject *station in self.stations) {
+				NSString *lineName = [station valueForKey:@"line"];
+				
+				NSMutableDictionary *line = [self.lines valueForKey:lineName];
+				
+				if (line) {
+					//line exist
+					NSMutableArray *stations = [line valueForKey:@"stations"];
+					[stations addObject:station];
+					[line setValue:stations forKey:@"stations"];
+				} else {
+					//line doesn't exist
+					line = [[NSMutableDictionary alloc] init];
+					[line setValue:lineName forKey:@"name"];
+					NSMutableArray *stations = [NSMutableArray arrayWithObject:station];
+					[line setValue:stations forKey:@"stations"];
+					[self.lines setValue:line forKey:lineName];
+				}
+			}
+		} else {
+			NSLog(@"Error: %@ %@", error, [error userInfo]);
+		}
+	}];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -43,6 +81,8 @@
 - (IBAction)setStation:(UIButton *)button {
 	StationPickerViewController *stationPickerController = [[StationPickerViewController alloc] init];
 	stationPickerController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+	stationPickerController.lines = self.lines;
+	stationPickerController.stations = self.stations;
 	[self presentModalViewController:stationPickerController animated:YES];
 }
 

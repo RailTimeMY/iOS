@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StationPickerViewController : UIViewController
+@class StationPickerViewController;
 
+@protocol StationPickerViewControllerDelegate
+- (void)stationPickerController:(StationPickerViewController *)controller didPickIndexPath:(NSIndexPath *)indexPath;
+@end
+
+@interface StationPickerViewController : UIViewController
+@property (weak, nonatomic) id <StationPickerViewControllerDelegate> delegate;
+
+@property (strong, nonatomic) NSMutableDictionary *lines;
+@property (strong, nonatomic) NSMutableArray *stations;
 @end
