@@ -49,6 +49,8 @@
 		775B4BAD17DB556E00CAFBB9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4BAC17DB556E00CAFBB9 /* OpenGLES.framework */; };
 		775B4BAF17DB570B00CAFBB9 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775B4BAE17DB570B00CAFBB9 /* FacebookSDK.framework */; };
 		77A9605217DB65A6008B34CB /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 77A9605117DB65A6008B34CB /* GoogleMaps.bundle */; };
+		77A97C3417DC3B3B00800F23 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77A97C3317DC3B3B00800F23 /* icon@2x.png */; };
+		77A97C3617DC3B5A00800F23 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 77A97C3517DC3B5A00800F23 /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +105,8 @@
 		775B4BAC17DB556E00CAFBB9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		775B4BAE17DB570B00CAFBB9 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = RailTime/FacebookSDK.framework; sourceTree = "<group>"; };
 		77A9605117DB65A6008B34CB /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = RailTime/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		77A97C3317DC3B3B00800F23 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
+		77A97C3517DC3B5A00800F23 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +222,8 @@
 		775B4B5017DB03FA00CAFBB9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				77A97C3517DC3B5A00800F23 /* icon.png */,
+				77A97C3317DC3B3B00800F23 /* icon@2x.png */,
 				775B4B5117DB03FA00CAFBB9 /* RailTime-Info.plist */,
 				775B4B5217DB03FA00CAFBB9 /* InfoPlist.strings */,
 				775B4B5517DB03FA00CAFBB9 /* main.m */,
@@ -291,6 +297,8 @@
 				775B4B7D17DB1CD000CAFBB9 /* TimePickerViewController.xib in Resources */,
 				775B4B9617DB532100CAFBB9 /* Meadowpark.gpx in Resources */,
 				77A9605217DB65A6008B34CB /* GoogleMaps.bundle in Resources */,
+				77A97C3417DC3B3B00800F23 /* icon@2x.png in Resources */,
+				77A97C3617DC3B5A00800F23 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
