@@ -13,4 +13,5 @@
 @property (strong, nonatomic) PFObject *stationNearest;
 @property (strong, nonatomic) NSDate *arrivalTime;
 @property (strong, nonatomic) PFObject *stationDestination;
+@property (strong, nonatomic) NSArray *routes;
 @end

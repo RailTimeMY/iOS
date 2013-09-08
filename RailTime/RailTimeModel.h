@@ -12,6 +12,10 @@
 @interface RailTimeModel : NSObject
 
 @property (nonatomic) CLLocationCoordinate2D myLocation;
+@property (nonatomic) NSString *selectedOriginalID;
+@property (nonatomic) NSString *selectedDestinationID;
+@property (nonatomic) NSMutableArray *routes;
+@property (nonatomic) NSDate *selectedTime;
 
 + (id)sharedModel;
 

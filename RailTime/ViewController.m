@@ -22,6 +22,7 @@
 @property (strong, nonatomic) PFObject *stationNearest;
 @property (strong, nonatomic) NSDate *arrivalTime;
 @property (strong, nonatomic) PFObject *stationDestination;
+@property (strong, nonatomic) NSMutableArray *distances;
 
 @property (strong, nonatomic) IBOutlet UIView *mapContainer;
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
@@ -58,6 +59,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	self.distances = [[NSMutableArray alloc]init];
+	
 	GMSMapView *mapView = [GMSMapView mapWithFrame:self.mapContainer.bounds camera:nil];
 	mapView.myLocationEnabled = YES;
 	self.mapView = mapView;
@@ -151,6 +154,7 @@
 				CLLocation *userLocation = [[CLLocation alloc] initWithLatitude:self.myShareModel.myLocation.latitude longitude:self.myShareModel.myLocation.longitude];
 				CLLocation *station = [[CLLocation alloc] initWithLatitude:position.latitude longitude:position.longitude];
 				CLLocationDistance distance = [userLocation distanceFromLocation:station];
+				[self.distances addObject:[NSNumber numberWithDouble:distance]];
 				marker.snippet = [NSString stringWithFormat:@"%.2fkm", distance/1000.0];
 				
 //				UIColor *markerColour = [UIColor blackColor];
@@ -181,6 +185,7 @@
 				
 				marker.map = self.mapView;
 			}
+			[self selectTheNearestStation];
 			
 			self.nearestButton.enabled = self.destinationButton.enabled = YES;
 		} else {
@@ -219,6 +224,44 @@
 	[appDelegate.locationManager stopUpdatingLocation];
 }
 
+-(void)selectTheNearestStation{
+    double shortestDistance;
+    int selectedShortestIndex;
+    
+    if(self.distances.count>0){
+        shortestDistance = [[self.distances objectAtIndex:0] doubleValue];
+        selectedShortestIndex = 0;
+    }
+    
+    PFObject *shortestStation;
+    
+    for(int i =0;i<self.distances.count;i++){
+        if([[self.distances objectAtIndex:i] doubleValue]<shortestDistance){
+            shortestDistance = [[self.distances objectAtIndex:i]doubleValue];
+            selectedShortestIndex = i;
+        }
+    }
+    
+    if(self.distances.count>0){
+        shortestStation = [self.stations objectAtIndex:selectedShortestIndex];
+        NSLog(@"shotestStation:%@",shortestStation);
+    }
+	
+//	for(int i =0;i<self.stations.count;i++){
+//        if([[[self.stations objectAtIndex:i] objectId] isEqualToString:self.myShareModel.selectedOriginalID]){
+//            self.stationNearest = [self.stations objectAtIndex:i];
+//        }
+//    }
+	self.stationNearest = shortestStation;
+    self.myShareModel.selectedOriginalID = shortestStation.objectId;
+    
+    NSString *stationString = [NSString stringWithFormat:@"%@ (%@)", [shortestStation valueForKey:@"name"], [shortestStation valueForKey:@"line"]];
+	
+    self.nearestStationLabel.text = stationString;
+    
+    
+}
+
 - (IBAction)setStation:(UIButton *)button {
 	self.selectedButton = button;
 	
@@ -240,14 +283,45 @@
 }
 
 - (IBAction)loadTime {
-	//get results from Parse
+	self.myShareModel.selectedOriginalID = self.stationNearest.objectId;
+	self.myShareModel.selectedTime = self.arrivalTime;
+	self.myShareModel.selectedDestinationID = self.stationDestination.objectId;
 	
-	DirectionViewController *directionController = [[DirectionViewController alloc] init];
-	directionController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-	directionController.stationNearest = self.stationNearest;
-	directionController.arrivalTime = self.arrivalTime;
-	directionController.stationDestination = self.stationDestination;
-	[self presentModalViewController:directionController animated:YES];
+	if (self.myShareModel.selectedDestinationID == NULL || [self.myShareModel.selectedDestinationID isEqualToString:@""]) {
+        UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"Destination Station Needed" message:@"Please select the destination station." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alertView show];
+    } else if(self.myShareModel.selectedOriginalID == NULL || [self.myShareModel.selectedOriginalID isEqualToString:@""]) {
+        UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"Nearest Station Needed" message:@"Please select the nearest station." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alertView show];
+    } else if(self.myShareModel.selectedTime == NULL)
+    {
+        UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"Time to Reach Needed" message:@"Please select the time to reach your destination." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alertView show];
+    } else {
+        PFQuery *queryStation = [PFQuery queryWithClassName:@"RoutingTable"];
+		[queryStation orderByAscending:@"totalDuration"];
+        [queryStation whereKey:@"originID" equalTo:self.myShareModel.selectedOriginalID];
+        [queryStation whereKey:@"destinationID" equalTo:self.myShareModel.selectedDestinationID];
+        
+        self.myShareModel.routes = [[NSMutableArray alloc]init];
+        
+        [queryStation findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                if(objects.count!=0){
+					DirectionViewController *directionController = [[DirectionViewController alloc] init];
+					directionController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+					directionController.stationNearest = self.stationNearest;
+					directionController.arrivalTime = self.arrivalTime;
+					directionController.stationDestination = self.stationDestination;
+					directionController.routes = objects;
+					[self presentModalViewController:directionController animated:YES];
+                } else {
+                    UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"Coming Soon!" message:@"This route will be available soon!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                    [alertView show];
+                }
+            }
+        }];
+    }
 }
 
 #pragma mark - Delegates
@@ -264,6 +338,11 @@
 	NSMutableArray *stations = [[self.lines valueForKey:lineName] valueForKey:@"stations"];
 	PFObject *station = [stations objectAtIndex:indexPath.row];
 	NSString *stationString = [NSString stringWithFormat:@"%@ (%@)", [station valueForKey:@"name"], [station valueForKey:@"line"]];
+	
+	PFGeoPoint *geopoint = [station valueForKey:@"coordinate"];
+	
+	GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:geopoint.latitude longitude:geopoint.longitude zoom:15];
+	[self.mapView animateToCameraPosition:camera];
 	
 	if (self.selectedButton == self.nearestButton) {
 		self.nearestStationLabel.text = stationString;
